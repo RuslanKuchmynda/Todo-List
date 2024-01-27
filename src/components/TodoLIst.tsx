@@ -9,11 +9,12 @@ const TodoList: React.FC<ITodoListProps> = (props) =>{
     const {items, removeTodo, toggleTodo} = props;
     return(
         <div>
-            {items.map(todo => (
+            {items.map((todo, index) => (
                 <TodoItem
                     key = {todo.id}
                     toggleTodo = {toggleTodo}
                     removeTodo = {removeTodo}
+                    index = {index + 1}
                     {...todo}/>
                 ))
             }
